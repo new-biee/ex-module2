@@ -15,12 +15,12 @@ public class View {
 
         while (true) {
             System.out.println("Enter phone number");
-            String phoneNumberPattern = "^(09|01[2|6|8|9])+([0-9]{8})\\b";
             String inputPhoneNumber = scanner.nextLine();
-            Pattern patternDate = Pattern.compile(phoneNumberPattern);
-            Matcher matcherDate = patternDate.matcher(inputPhoneNumber);
+            String phoneNumberPattern = "^(09|01[2|6|8|9])+([0-9]{8})\\b";
+            Pattern patternPhoneNumber = Pattern.compile(phoneNumberPattern);
+            Matcher matcherPhoneNumber = patternPhoneNumber.matcher(inputPhoneNumber);
             try {
-                if (matcherDate.find()) {
+                if (matcherPhoneNumber.find()) {
                     check = true;
                     return inputPhoneNumber;
                 } else {
@@ -33,26 +33,31 @@ public class View {
     }
 
     public String inputGroup() {
+        System.out.println("Enter group:");
         String inputGroup = scanner.nextLine();
         return inputGroup;
     }
 
     public String inputFullName() {
+        System.out.println("Enter full name:");
         String inputFullName = scanner.nextLine();
         return inputFullName;
     }
 
     public String inputGender() {
+        System.out.println("Enter gender:");
         String inputGender = scanner.nextLine();
         return inputGender;
     }
 
     public String inputAddress() {
+        System.out.println("Enter address:");
         String inputAddress = scanner.nextLine();
         return inputAddress;
     }
 
     public String inputDateOfBirth() {
+        System.out.println("Enter date of birth:");
         String inputDateOfBirth = scanner.nextLine();
         return inputDateOfBirth;
     }
@@ -62,10 +67,10 @@ public class View {
             System.out.println("Enter email");
             String emailPattern = "^[a-z][a-z0-9_\\.]{5,32}@[a-z0-9]{2,}(\\.[a-z0-9]{2,4}){1,2}$";
             String inputEmail = scanner.nextLine();
-            Pattern pattern = Pattern.compile(emailPattern);
-            Matcher matcher = pattern.matcher(inputEmail);
+            Pattern patternEmail = Pattern.compile(emailPattern);
+            Matcher matcherEmail = patternEmail.matcher(inputEmail);
             try {
-                if (matcher.find()) {
+                if (matcherEmail.find()) {
                     check = true;
                     return inputEmail;
                 } else {
