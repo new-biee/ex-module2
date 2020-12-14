@@ -43,7 +43,7 @@ public class ListPhoneBook {
 
     public void updatePhoneBook(Phonebook phonebook) {
         for (Phonebook p : ListPhoneBook.getListPhoneBooks()) {
-            if (p.getPhoneNumber() == phonebook.getPhoneNumber()) {
+            if (p.getPhoneNumber().equals(phonebook.getPhoneNumber())) {
                 p.setGroupOfContacts(phonebook.getGroupOfContacts());
                 p.setFullName(phonebook.getFullName());
                 p.setGender(phonebook.getGender());
@@ -56,7 +56,7 @@ public class ListPhoneBook {
 
     public ArrayList<Phonebook> removeOnePhone(String phoneNumber) {
         for (int i = 0; i < phonebooks.size(); i++) {
-            if (phoneNumber == phonebooks.get(i).getPhoneNumber()) {
+            if (phoneNumber.equals(phonebooks.get(i).getPhoneNumber())) {
                 phonebooks.remove(i);
             }
         }

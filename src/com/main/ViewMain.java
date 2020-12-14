@@ -47,11 +47,12 @@ public class ViewMain {
                             String email = view.inputEmail();
                             phonebook = new Phonebook(inputPhoneNumberUpdate, fullNameUpdate, groupUpdate, genderUpdate, addressUpdate, dataOfBirthUpdate, email);
                             listPhoneBook.updatePhoneBook(phonebook);
+                            listPhoneBook.updateListPhoneBook();
                             break;
                         case 4:
                             String inputRemovePhoneNumber = view.inputPhoneNumber();
                             listPhoneBook.removeOnePhone(inputRemovePhoneNumber);
-                            listPhoneBook.updateListPhoneBook();
+//                            listPhoneBook.updateListPhoneBook();
                             break;
                         case 5:
                             String findPhoneNumber = view.inputPhoneNumber();
@@ -59,7 +60,7 @@ public class ViewMain {
                             view.showOnePhone(phonebook1);
                             break;
                         case 6:
-                            IO.csvWriterPhoneBook("data/contact.csv", phonebook);
+                            IO.csvWriterPhoneBook("data/contacts.csv", phonebook);
                             break;
                         case 7:
                             listPhoneBook.updateListPhoneBook();
